@@ -1,0 +1,3389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.01.4955</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode" >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" style="background-color: #00000000;">
+            <div class="profile-container">
+                <img src="360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="Profile Photo" class="profile-image not-affected-by-dark-mode">
+                <div>
+                    <h4 class="mb-0 ml-1">Rizal Amri Rozaqi</h4>
+                    <p class="mt-0 ml-1">23.01.4955</p>
+                </div>
+            </div>
+            <button id="themeSwitcher" class="btn btn-secondary ml-auto" style="position: fixed; right: 20px;"><i class="bi bi-moon-stars"></i></button>
+            <div class="containersw">
+                <button id="languageSwitcher" class="btn btn-secondary ml-auto" data-translate="switchLanguage">id</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex">
+        <div class="sidebar1">
+            <div class="tab" style="height: 2000px;">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <input class="tablinks active" onclick="openTab(event, 'dashboard')" type="radio" id="dash" name="erere"><label for="dash" class="tab">Dashboard</label>
+                <input class="tablinks" onclick="openTab(event, 'petunjuk')" type="radio" id="hint" name="erere"><label for="hint" class="tab">Petunjuk</label>
+                <input class="tablinks" onclick="openTab(event, 'email')" type="radio" id="imel" style="margin-bottom: 0;" name="erere"><label for="imel" class="tab">E-mail</label>
+                <div class="dropdown" style="margin-top: 0;">
+                    <button class="dropdown-btn tablinks" id="mhs" style="text-align: center; margin-bottom: 0; margin-top: 0px;"></button><label for="mhs" class="tab">Mahasiswa ▼</label>
+                    <div class="dropdown-content" id="limhs">
+                        <button class="dropdown-btn tablinks" id="maha" style="text-align: center;"></button><label  for="maha" class="tab">Profil Mahasiswa ▼</label>
+                        <div class="dropdown-subcontent" id="kontenMaha">
+                            <div class="container mt-2 dropdown-content2" style="width: 200px;">
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="fakultasSelect">
+                                    <option value="">Pilih Fakultas</option>
+                                    <option value="ilmuKomputer">Ilmu Komputer</option>
+                                    <option value="ekonomiSosial">Ekonomi dan Sosial</option>
+                                    <option value="sainsTeknologi">Sains dan Teknologi</option>
+                                </select>
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="angkatanSelect" disabled>
+                                    <option value="">Pilih Angkatan</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="prodiSelect" disabled>
+                                    <option value="">Pilih Program Studi</option>
+                                </select>                          
+                            </div>
+                        </div>
+                        <button class="dropdown-btn tablinks" id="rekap" style="text-align: center;"></button><label for="rekap" class="tab">Rekap Nilai ▼</label> 
+                        <div class="dropdown-subcontent" id="kontenNilai">
+                            <div class="container mt-2 dropdown-content2" style="width: 200px;">
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="fakultasSelect2">
+                                    <option value="">Pilih Fakultas</option>
+                                    <option value="ilmuKomputer">Ilmu Komputer</option>
+                                    <option value="ekonomiSosial">Ekonomi dan Sosial</option>
+                                    <option value="sainsTeknologi">Sains dan Teknologi</option>
+                                </select>
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="angkatanSelect2" disabled>
+                                    <option value="">Pilih Angkatan</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                                <select class="dropdown-item form-select form-select-sm mb-3" id="prodiSelect2" disabled>
+                                    <option value="">Pilih Program Studi</option>
+                                </select>                          
+                            </div>
+                        </div>   
+                        <input class="tablinks" id="appendData" onclick="openTab(event, 'apd')" type="radio" name="erere"><label for="appendData" class="tab">Tambah Data</label>
+                    </div>
+                </div>
+                <input type="radio" class="tablinks" onclick="openTab(event, 'contact')" name="erere" id="con"><label for="con" class="tab" >Contact</label>
+            </div>
+        </div>
+
+
+        <!-------------------------------------------------Dashboard--------------------------------------------------------------->
+
+        <div class="tabcontent" id="dashboard" style="overflow: auto;">
+            <div id="dashboard" class="qr" style="display:block;">
+                <p style="position: relative; left: 25px;">Kode QR</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="200px" style="position: fixed; left: 320px;" height="200px" fill="currentColor" class="bi bi-qr-code" viewBox="0 0 16 16">
+                    <path d="M2 2h2v2H2z"/>
+                    <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
+                    <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
+                    <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
+                    <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
+                  </svg>
+    
+                  <p style="position: relative; left: 20px; margin-top: 70px; top: 210px;">Status: Aktif</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="200px" style="position: fixed; left: 320px; top: 460px;" height="200px" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                  </svg>  
+            </div>
+            <div id="dashboard" class="db" style="display: block;">
+                <div class="container mt-5">
+                    <h1>Jadwal Dosen</h1>
+                
+                    <h4>Senin</h4>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mata Kuliah</th>
+                                <th>Jam</th>
+                                <th>Ruang</th>
+                                <th>Jenis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>D3 Teknik Informatika</td>
+                                <td>07:00 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>D3 Manajemen Informatika</td>
+                                <td>08:50 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>S1 Sistem Informasi</td>
+                                <td>10:40 WIB</td>
+                                <td>7.4.1</td>
+                                <td>Praktikum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h4>Selasa</h4>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mata Kuliah</th>
+                                <th>Jam</th>
+                                <th>Ruang</th>
+                                <th>Jenis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>D3 Teknik Informatika</td>
+                                <td>07:00 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>D3 Manajemen Informatika</td>
+                                <td>08:50 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>S1 Sistem Informasi</td>
+                                <td>10:40 WIB</td>
+                                <td>7.4.1</td>
+                                <td>Praktikum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h4>Rabu</h4>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mata Kuliah</th>
+                                <th>Jam</th>
+                                <th>Ruang</th>
+                                <th>Jenis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>D3 Teknik Informatika</td>
+                                <td>07:00 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>D3 Manajemen Informatika</td>
+                                <td>08:50 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h4>Kamis</h4>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mata Kuliah</th>
+                                <th>Jam</th>
+                                <th>Ruang</th>
+                                <th>Jenis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>D3 Teknik Informatika</td>
+                                <td>07:00 WIB</td>
+                                <td>5.7.3</td>
+                                <td>Teori</td>
+                            </tr>
+                            <tr>
+                                <td>S1 Sistem Informasi</td>
+                                <td>10:40 WIB</td>
+                                <td>7.4.1</td>
+                                <td>Praktikum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <h4>Jumat</h4>
+                    <table class="table table-sm">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Mata Kuliah</th>
+                                <th>Jam</th>
+                                <th>Ruang</th>
+                                <th>Jenis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S1 Sistem Informasi</td>
+                                <td>10:40 WIB</td>
+                                <td>7.4.1</td>
+                                <td>Praktikum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+            <!-- ---------------------------------------------------- Ilmu Komputer ---------------------------------------------------------- -->
+            <div id="ilmuKomputer2022D3TI" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                    </div>
+                    <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                    </div>
+                    <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="background-color: #ecebeb;">No</th>
+                                <th style="background-color: #ecebeb;">NIM</th>
+                                <th style="background-color: #ecebeb;">Nama</th>
+                                <th style="background-color: #ecebeb;">Kelas</th>          
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>          
+                                </tr>
+                                <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                </tr>
+                                <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="ilmuKomputer2022S1SI" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="ilmuKomputer2023D3TI" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="ilmuKomputer2023S1SI" class="content-section">
+                <h3>Ilmu Komputer 2023 - S1 Sistem Informasi</h3>
+            </div>
+    
+            <!-- ---------------------------------------------------- Ekonomi dan Sosial ----------------------------------------------- -->
+            <div id="ekonomiSosial2022S1IP" class="content-section">
+                <h3>Ekonomi dan Sosial 2022 - S1 Ilmu Pemerintahan</h3>
+            </div>
+            <div id="ekonomiSosial2022S1AK" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="ekonomiSosial2023S1IP" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="ekonomiSosial2023S1AK" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+    
+            <!-- ----------------------------------------------------- Sains dan Teknologi --------------------------------------------- -->
+            <div id="sainsTeknologi2022S1GEO" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="sainsTeknologi2022S1ARS" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="sainsTeknologi2023S1ARS" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+            <div id="sainsTeknologi2023S1ARS" class="content-section">
+                <div class="container mt-5">
+                    <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                      <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                      <p style="opacity: 70%; color: white;">Profil Mahasiswa</p>
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                  </div>
+                  <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                    </div>
+                    <h1 class="mt-5">Daftar Mahasiswa</h1>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th style="background-color: #ecebeb;">No</th>
+                          <th style="background-color: #ecebeb;">NIM</th>
+                          <th style="background-color: #ecebeb;">Nama</th>
+                          <th style="background-color: #ecebeb;">Kelas</th>          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr id="4954" data-bs-toggle="modal" data-bs-target="#ziziProfile">
+                          <td>1</td>
+                          <td>23.01.4954</td>
+                          <td>Zidan Farras Abdulghani</td>
+                          <td>D3TI01</td>          
+                        </tr>
+                        <tr id="4955" data-bs-toggle="modal" data-bs-target="#rizalProfile">
+                          <td>2</td>
+                          <td>23.01.4955</td>
+                          <td>Rizal Amri Rozaqi</td>
+                          <td>D3TI01</td>
+                        </tr>
+                        <tr id="4956" data-bs-toggle="modal" data-bs-target="#frandiProfile">
+                          <td>3</td>
+                          <td>23.01.4956</td>
+                          <td>Frandi Ramadhan</td>
+                          <td>D3TI01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="modal" id="ziziProfile" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Profil Mahasiswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <table class="table table-borderless">
+                              <tbody>
+                                <tr>
+                                  <td>Nama</td>
+                                  <td>:</td>
+                                  <td>Zidan Farras Abdulghani</td>
+                                </tr>
+                                <tr>
+                                  <td>NIM</td>
+                                  <td>:</td>
+                                  <td>23.01.4954</td>
+                                </tr>
+                                <tr>
+                                  <td>Kelas</td>
+                                  <td>:</td>
+                                  <td>23D3TI01</td>
+                                </tr>
+                                <tr>
+                                  <td>Umur</td>
+                                  <td>:</td>
+                                  <td>99+ Tahun</td>
+                                </tr>
+                                <tr>
+                                  <td>Coblos</td>
+                                  <td>:</td>
+                                  <td>01</td>
+                                </tr>
+                                <tr>
+                                  <td>Photo</td>
+                                  <td>:</td>
+                                  <td><img src="zizi.png" alt="zizi"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="rizalProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Profil Mahasiswa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Nama</td>
+                                <td>:</td>
+                                <td>Rizal Amri Rozaqi</td>
+                              </tr>
+                              <tr>
+                                <td>NIM</td>
+                                <td>:</td>
+                                <td>23.01.4955</td>
+                              </tr>
+                              <tr>
+                                <td>Kelas</td>
+                                <td>:</td>
+                                <td>23D3TI01</td>
+                              </tr>
+                              <tr>
+                                <td>Umur</td>
+                                <td>:</td>
+                                <td>18 Tahun</td>
+                              </tr>
+                              <tr>
+                                <td>Coblos</td>
+                                <td>:</td>
+                                <td>--</td>
+                              </tr>
+                              <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td><img src="rizal.png" alt="rizal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="frandiProfile" style="display: none;" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Profil Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <table class="table table-borderless">
+                          <tbody>
+                            <tr>
+                              <td>Nama</td>
+                              <td>:</td>
+                              <td>Frandi Ramadhan</td>
+                            </tr>
+                            <tr>
+                              <td>NIM</td>
+                              <td>:</td>
+                              <td>23.01.4956</td>
+                            </tr>
+                            <tr>
+                              <td>Kelas</td>
+                              <td>:</td>
+                              <td>23D3TI01</td>
+                            </tr>
+                            <tr>
+                              <td>Umur</td>
+                              <td>:</td>
+                              <td>99+ Tahun</td>
+                            </tr>
+                            <tr>
+                              <td>Coblos</td>
+                              <td>:</td>
+                              <td>02</td>
+                            </tr>
+                            <tr>
+                              <td>Photo</td>
+                              <td>:</td>
+                              <td><img src="frandi.png" alt="frandi"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+        <!-------------------------------------------------------------------------------------------------------------------------------->
+         <!-- ---------------------------------------------------- Ilmu Komputer ---------------------------------------------------------- -->
+         <div id="ilmuKomputer2022D3TIrekap" class="content-section" style="overflow: auto;">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 D3 Teknik Informatika</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="ilmuKomputer2022S1SIrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 S1 Sistem Informasi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="ilmuKomputer2023D3TIrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 D3 Teknik Informatika</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="ilmuKomputer2023S1SIrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 S1 Sistem Informasi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+        <!-- ---------------------------------------------------- Ekonomi dan Sosial ----------------------------------------------- -->
+        <div id="ekonomiSosial2022S1IPrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 S1 Ilmu Pemerintahan</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="ekonomiSosial2022S1AKrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 S1 Akuntansi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="ekonomiSosial2023S1IPrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 S1 Ilmu Pemerintahan</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="ekonomiSosial2023S1AKrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 S1 Akuntansi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+        <!-- ----------------------------------------------------- Sains dan Teknologi --------------------------------------------- -->
+        <div id="sainsTeknologi2022S1GEOrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 S1 Geografi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="sainsTeknologi2022S1ARSrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 22 S1 Arsitektuk</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="sainsTeknologi2023S1GEOrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 S1 Geografi</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="sainsTeknologi2023S1ARSrekap" class="content-section">
+            <div class="container">
+                <div class="container p-4" style="background-color: #6c757d; border-top-left-radius: 20px; border-bottom-left-radius: 0px; border-top-right-radius: 20px; border-bottom-right-radius: 0px;">
+                    <h2 style="color: white;">Kelas : 23 S1 Arsitektur</h2>
+                    <p style="opacity: 70%; color: white;">Click Edit for edit data</p>
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d;">
+                </div>
+                <div class="container p-1 mt-2 mb-2" style="background-color: #6c757d; border-top-left-radius: 0px; border-bottom-left-radius: 20px; border-top-right-radius: 0px; border-bottom-right-radius: 20px;">
+                </div>
+                    <div class="container mt-5">
+                        <h2>Daftar Mahasiswa</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Nilai UAS</th>
+                                    <th>Nilai UTS</th>
+                                    <th>Presensi</th>
+                                    <th>Grade</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="4954">
+                                    <td>1</td>
+                                    <td>23.01.4954</td>
+                                    <td>Zidan Farras Abdulghani</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4954">100</span></td>
+                                    <td><span id="uts4954">100</span></td>
+                                    <td><span id="presensi4954">100%</span></td>
+                                    <td><span id="keaktifan4954">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4954)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4955">
+                                    <td>2</td>
+                                    <td>23.01.4955</td>
+                                    <td>Rizal Amri Rozaqi</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4955">100</span></td>
+                                    <td><span id="uts4955">100</span></td>
+                                    <td><span id="presensi4955">100%</span></td>
+                                    <td><span id="keaktifan4955">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4955)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                                <tr id="4956">
+                                    <td>3</td>
+                                    <td>23.01.4956</td>
+                                    <td>Frandi Ramadhan</td>
+                                    <td>D3TI01</td>
+                                    <td><span id="uas4956">100</span></td>
+                                    <td><span id="uts4956">100</span></td>
+                                    <td><span id="presensi4956">100%</span></td>
+                                    <td><span id="keaktifan4956">A</span></td>
+                                    <td><button class="btn btn-secondary btn-sm editBtn" onclick="editMahasiswa(4956)"><span><i class="bi bi-pencil-square"></i></span></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Nilai Mahasiswa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <input type="hidden" id="editId">
+                            <div class="mb-3">
+                                <label for="editUAS" class="form-label">Nilai UAS</label>
+                                <input type="text" class="form-control" id="editUAS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editUTS" class="form-label">Nilai UTS</label>
+                                <input type="text" class="form-control" id="editUTS" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editPresensi" class="form-label">Presensi (%)</label>
+                                <input type="text" class="form-control" id="editPresensi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKeaktifan" class="form-label">Nilai Keaktifan</label>
+                                <input type="text" class="form-control" id="editKeaktifan" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    <!-------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+        <!-------------------------------------------------------------Tambah Data-------------------------------------------------------->
+        <div class="tabcontent" id="apd" style="display: none;">
+            <div id="apd" class="appenddata" style="width: 78%; position: fixed; right: 0%; height: 100%; background-color: white;">
+                <div class="container mt-5">
+                    <h2>Tambah Data Mahasiswa</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <div class="container">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="nama" class="form-label"><b>Nama</b></label>
+                                            <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="NIM" class="form-label"><b>Nomor Induk Mahasiswa</b></label>
+                                            <input type="number" class="form-control" id="NIM" placeholder="Masukkan Nomor Induk Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="alamat" class="form-label"><b>Alamat</b></label>
+                                            <input type="text" class="form-control" id="alamat" placeholder="Masukkan Alamat Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="tgl" class="form-label"><b>Tanggal Lahir</b></label>
+                                            <input type="date" class="form-control" id="tgl">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="tmpt" class="form-label"><b>Tempat Lahir</b></label>
+                                            <input type="text" class="form-control" id="tmpt" placeholder="Masukkan Tempat Lahir Mahasiswa">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label class="form-label"><b>Jenis Kelamin</b></label>
+                                            <div class="d-flex">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="laki-laki">
+                                                    <label class="form-check-label" for="laki-laki">Laki-laki</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan">
+                                                    <label class="form-check-label" for="perempuan">Perempuan</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="fak" class="form-label"><b>Fakultas</b></label>
+                                            <input type="text" class="form-control" id="fak" placeholder="Masukkan Fakultas Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="pro" class="form-label"><b>Prodi</b></label>
+                                            <input type="text" class="form-control" id="pro" placeholder="Masukkan Prodi Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="kls" class="form-label"><b>Kelas</b></label>
+                                            <input type="text" class="form-control" id="kls" placeholder="Masukkan Kelas Mahasiswa">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-primary" style="width: 530px;">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+                
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

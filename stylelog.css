@@ -1,0 +1,212 @@
+    /*form popup*/
+    .form-popup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      padding: 50px;
+      background-color: #fffffff5;
+      border: 2px solid #cccccc;
+      border-radius: 10px;
+      z-index: 9;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888888;
+      width: 80%;
+    }
+
+    /*tab*/
+    .tab {
+      font-size:40px;
+      padding-bottom:0px;
+      margin:0 30px 0px 30px;
+      display:inline-block;
+      border-bottom:2px solid transparent;
+      text-transform:uppercase;
+    }
+    .tab:hover {
+      font-size:40px;
+      padding-bottom:0px;
+      margin:0 30px 0px 30px;
+      display:inline-block;
+      border-bottom:2px solid transparent;
+      cursor: pointer;
+    }
+    .tablinks{
+      color:#000000;
+      border-bottom:#1162ee00;
+      font-size: 10px;
+    }
+    .tablinks.active + .tab{
+      color:#3b3b3b;
+      border-color: rgb(41, 117, 231);
+    }
+    .tablinks.active :checked, .tablinks :checked{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      transform:rotateY(180deg);
+      backface-visibility:hidden;
+      transition:all .4s linear;
+    }
+    .tab button.active {
+      background-color: rgba(129, 127, 127, 0);
+          }
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    /*close tab form*/
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      background-color: #00000000;
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /*button*/
+    button[type="submit"] {
+      position: absolute; 
+      right: 67px; 
+      background-color: #797979; 
+      color: white; 
+      width: 460px; 
+      height: auto; 
+      padding: 10px; 
+      border-radius: 5px;
+    }
+    button[type="submit"]:hover {
+      background-color: #ccc;
+      color: #202020;
+    }
+    button[type="submit"]::-webkit-textfield-decoration-container {
+      background-color: #000000;
+    }
+
+    /*bg image*/
+    .bg-image {
+      background-image: url('—Pngtree—dark vector abstract background_1159556.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh; 
+      color: white; 
+    }
+
+    /*radio lk pr*/
+    .custom-radio {
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .custom-radio::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        border: 1px solid #999;
+        border-radius: 50%;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+    input[type="radio"]:checked + .custom-radio::before {
+        background-color: #007bff;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+
+    /*label*/
+    label {
+      color: #000000;
+    }
+
+    /*animasi titik2*/
+    .animated-elipsis1 {
+        opacity: 100; 
+        display: inline-block;
+        white-space: nowrap;
+        animation: fadeIn1 3s forwards infinite; 
+    }
+    .animated-elipsis2 {
+        opacity: 100; 
+        display: inline-block;
+        white-space: nowrap;
+        animation: fadeIn2 3s forwards infinite; 
+    }
+    .animated-elipsis3 {
+        opacity: 100; 
+        display: inline-block;
+        white-space: nowrap;
+        animation: fadeIn3 3s forwards infinite; 
+    }
+    @keyframes fadeIn1 {
+        0% {
+          opacity: 0;
+        }
+        30% {
+            opacity: 100;
+        }
+    }
+    @keyframes fadeIn2 {
+      0% {
+        opacity: 0;
+      }
+        30% {
+          opacity: 0; 
+        }
+        60% {
+          opacity: 100;
+        }
+    }
+    @keyframes fadeIn3 {
+      0% {
+        opacity: 0;
+      }
+        60% {
+          opacity: 0;
+        }
+        90% {
+            opacity: 100;
+        }
+    }
+
+    /*footer*/
+    .foot-lnk{
+      text-align:center;
+    }
+    .hr{
+      height:2px;
+      margin:10px 0 30px 0;
+      background:rgba(255,255,255,.2);
+    }

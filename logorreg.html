@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login/Register</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylelog.css">
+</head>
+<body>
+  <div class="bg-image">
+    <h1 style="text-shadow: #ddd; position: absolute; right: 400px; bottom: 340px;">Hello, Before you continuing<span class="animated-elipsis1">.</span><span class="animated-elipsis2">.</span><span class="animated-elipsis3">.</span></h1>
+
+      <!-- Language Switcher -->
+    <div class="d-flex justify-content-end mb-3">
+      <button id="englishBtn" class="btn btn-secondary btn-sm mx-1" onclick="setLanguage('en')">English</button>
+      <button id="indonesianBtn" class="btn btn-secondary btn-sm mx-1" onclick="setLanguage('id')">Indonesia</button>      
+    </div>
+
+    <!-- button open form -->
+    <button onclick="openForm()" style="position: absolute; right: 650px; bottom: 300px; border-radius: 5px; border-color: #88888800; background-color: rgb(0, 123, 255); color: white; font-size: larger; width: 90px;">Login</button>
+
+    <!-- pop-up/modal -->
+    <div class="form-popup" id="myForm" aria-hidden="true">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border-color: #00000000; background-color: #00000000;" onclick="closeForm()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="tab">
+        <input class="tablinks active" onclick="openTab(event, 'login')" type="radio" id="loginkang" name="erere"><label for="loginkang" class="tab">Login</label>
+        <input class="tablinks" onclick="openTab(event, 'register')" type="radio" id="registerkang" name="erere"><label for="registerkang" class="tab">Register</label>
+      </div>
+
+      <!-- tab Login -->
+      <div id="login" class="tabcontent" style="display:block; margin-top: 60px;">
+        <form action="final.html" method="post">
+          <div class="mb-3">
+            <label for="email"><b>Email</b></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password"><b>Password</b></label>
+            <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+          </div>
+          <div class="mb-3">
+            <div class="hr"></div>
+              <div class="foot-lnk">
+                <a href="#forgot">Forgot Password?</a>
+              </div>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <!-- tab Register -->
+      <div id="register" class="tabcontent" style="margin-top: 50px;">
+        <form action="final.html" method="post">
+          <div class="mb-3">
+            <label for="name"><b>Name</b></label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email"><b>Email</b></label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+          </div>
+          <div class="mb-3">
+            <label for="password"><b>Password</b></label>
+            <input type="password" class="form-control" id="password" placeholder="Create a Password" required>
+          </div>
+          <div class="mb-3">
+            <label for="rptpwd"><b>Confirm Password</b></label>
+            <input type="password" class="form-control" id="rptpwd" placeholder="Repeat Your Password" required>
+          </div>
+          <div class="mb-3">
+            <input type="radio" id="laki" name="jk" value="Laki-laki">
+            <label for="laki" class="custom-radio" style="color: black;">Male</label>
+            <input type="radio" id="perempuan" name="jk" value="Perempuan">
+            <label for="perempuan" class="custom-radio" style="color: black;">Female</label>
+            <input type="radio" name="jk" id="not" value="Secret">
+            <label for="not" class="custom-radio" style="color: #000000;">Prefer Not to Say</label>
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+
+    <script src="scriptlog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

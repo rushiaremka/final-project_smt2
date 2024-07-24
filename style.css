@@ -1,0 +1,134 @@
+
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        /*-----------------------------------------------------Profile-------------------------------------------*/
+        .profile-container {
+            display: flex;
+            align-items: center;
+        }
+        .profile-image {
+            border-radius: 10%;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        /*----------------------------------------------------------Sidebar----------------------------------------------*/
+        .sidebar1 {
+            height: 600px;
+            width: 22%;
+            position: fixed;
+            top: 85px;
+            left: 0;
+            background-color: #b8b8b8;
+            overflow: auto;
+        }
+        .tab {
+            font-size: 15px;
+            text-align: center;
+            padding-bottom: 0px;
+            margin: 20px 30px 20px 30px;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .tab:hover {
+            border-bottom-color: #0077ff;
+        }
+        .tablinks {
+            color: #000000;
+            border-bottom-color: #1162ee00;
+        }
+        .tablinks.active {
+            color: #0077ff;
+            border-bottom: 2px solid #0077ff;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        .dropdown-btn {
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+        .dropdown-subcontent {
+            display: none;
+        }
+        
+        /*-------------------------------------------------------dashboard-----------------------------------------------*/
+        .qr {
+            height: 100%;
+            width: 180px;
+            position: fixed;
+            top: 15px;
+            left: 320px;
+            margin-top: 70px;
+            margin-left: 40px;
+            background-color: #ffffff;
+            border-right: 2px solid #c3c3c3;
+            padding-top: 30px;
+        }
+        .db {
+            height: 600px;
+            width: 830px;
+            position: fixed;
+            top: 85px;
+            left: 539px;
+            background-color: white;
+            overflow-y: scroll;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        /*------------------------------------------------------Tambah Data---------------------------------------------------*/
+        .apenddata {
+            display: none;
+            height: 100%; 
+            width: 78%; 
+            position: fixed; 
+            right: 0; 
+            background-color: white;
+            color: #000000;
+        }
+        /*------------------------------------------------------Profil Mahasiswa---------------------------------------------*/
+        .content-section {
+            display: none;
+            height: 100%; 
+            width: 78%; 
+            position: fixed; 
+            right: 0; 
+            background-color: white; 
+            text-align: left;
+        }
+        /*-------------------------------------------------------Dark Mode----------------------------------------------*/
+        .dark-mode .navbar {
+            background-color: #343a40; 
+            color: #ffffff;
+        }
+
+        .dark-mode .navbar .dropdown-menu {
+            background-color: #343a40; 
+            color: #ffffff; 
+        }
+        /*----------------------------------------------------------Container Switch language-----------------------------------------------*/
+        .containersw {
+            width: 50px;
+            height: auto;
+            margin: 20 20 20 20;
+            position: fixed;
+            right: 70px;
+        }
